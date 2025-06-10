@@ -1,2 +1,3 @@
-export * from './mongoose-repo.module';
-export * from './mongoose-repo.service';
+export * from './interfaces';
+export * from './mongoose-repository.module';
+export * from './repository.service';
