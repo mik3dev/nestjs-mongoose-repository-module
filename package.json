@@ -1,7 +1,7 @@
 {
-  "name": "mongoose-repo-module",
+  "name": "nestjs-mongoose-repository-module",
   "version": "1.0.0",
-  "description": "",
+  "description": "NestJS module for Mongoose repositories",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -12,7 +12,7 @@
     "clean": "rm -rf dist"
   },
   "keywords": [],
-  "author": "",
+  "author": "mik3dev",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
