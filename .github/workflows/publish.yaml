@@ -57,5 +57,8 @@ jobs:
       - name: Push version changes
         if: github.event_name == 'workflow_dispatch'
         run: |
+          git remote set-url origin https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
           git push
           git push --tags
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
