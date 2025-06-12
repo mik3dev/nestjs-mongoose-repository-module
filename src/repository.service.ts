@@ -1,4 +1,4 @@
-import { Injectable } from "@nestjs/common";
+import { BadRequestException, Injectable } from "@nestjs/common";
 import { InjectModel } from "@nestjs/mongoose";
 import { Model, Document, Types, FilterQuery, QueryOptions, UpdateQuery, DeleteResult, PipelineStage, AggregateOptions } from "mongoose";
 
@@ -14,7 +14,7 @@ export class RepositoryService<T extends Document> {
     } catch (error: any) {
       if (error?.code === 11000) {
         const key = Object.keys(error.keyValue)[0];
-        throw new Error(`Duplicate key ${key} error`);
+        throw new BadRequestException(`Duplicate key ${key} error`);
       }
       throw error;
     }
