@@ -1,4 +1,4 @@
-import { BadRequestException, Injectable } from "@nestjs/common";
+import { Injectable } from "@nestjs/common";
 import { InjectModel } from "@nestjs/mongoose";
 import { Model, Document, Types, FilterQuery, QueryOptions, UpdateQuery, DeleteResult, PipelineStage, AggregateOptions } from "mongoose";
 
@@ -7,17 +7,9 @@ export class RepositoryService<T extends Document> {
   constructor(@InjectModel('__PLACEHOLDER___') private readonly model: Model<T>) { }
 
   async create(data: Partial<T>): Promise<T> {
-    try {
-      const _id = new Types.ObjectId();
-      data['_id'] = _id;
-      return await this.model.create(data);
-    } catch (error: any) {
-      if (error?.code === 11000) {
-        const key = Object.keys(error.keyValue)[0];
-        throw new BadRequestException(`Duplicate key ${key} error`);
-      }
-      throw error;
-    }
+    const _id = new Types.ObjectId();
+    data['_id'] = _id;
+    return await this.model.create(data);
   }
 
   async find(
