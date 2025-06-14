@@ -18,9 +18,17 @@
     "check-types": "tsc --noemit",
     "check-code": "npm run lint && npm run check-types"
   },
-  "keywords": [],
+  "keywords": ["nestjs", "mongoose", "repository", "mongodb", "database"],
   "author": "mik3dev",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mik3dev/nestjs-mongoose-repository-module.git"
+  },
+  "homepage": "https://github.com/mik3dev/nestjs-mongoose-repository-module#readme",
+  "bugs": {
+    "url": "https://github.com/mik3dev/nestjs-mongoose-repository-module/issues"
+  },
   "type": "commonjs",
   "devDependencies": {
     "@eslint/js": "^9.29.0",
