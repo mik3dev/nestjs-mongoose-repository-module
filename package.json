@@ -1,6 +1,6 @@
 {
   "name": "nestjs-mongoose-repository-module",
-  "version": "1.0.0",
+  "version": "1.0.1-0",
   "description": "NestJS module for Mongoose repositories",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -18,7 +18,13 @@
     "check-types": "tsc --noemit",
     "check-code": "npm run lint && npm run check-types"
   },
-  "keywords": ["nestjs", "mongoose", "repository", "mongodb", "database"],
+  "keywords": [
+    "nestjs",
+    "mongoose",
+    "repository",
+    "mongodb",
+    "database"
+  ],
   "author": "mik3dev",
   "license": "ISC",
   "repository": {
